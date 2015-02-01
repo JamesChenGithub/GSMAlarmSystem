@@ -1,0 +1,96 @@
+/* 
+  Localizable.strings
+  GSMAlarmSystem
+
+  Created by James on 15-1-29.
+  Copyright (c) 2015年 James Chen. All rights reserved.
+*/
+
+"kapp_name" = "GSM报警系统";
+
+"ktab_menu" = "Menú principal";
+"ktab_settings" = "Configuración del sistema";
+"ktab_more" = "Más";
+
+"ktab_menu_talk" = "对讲";
+"ktab_menu_msg" = "留言";
+"ktab_menu_sos" = "紧急报警";
+"ktab_menu_home" = "在家布防";
+"ktab_menu_abandon" = "撤防";
+"ktab_menu_deployment" = "外出布防";
+"ktab_menu_duanx" = "短信查看";
+"ktab_menu_qurey" = "查询系统状态";
+"ktab_menu_speaker_on" = "打开警号";
+"ktab_menu_speaker_off" = "关闭警号";
+"ktab_menu_monitor" = "远程控制";
+
+"ktab_settings_call" = "Configuración del número de teléfono de alarma";
+"ktab_settings_msg_settings" = "Configuración del número de SMS de alarma";
+"ktab_settings_change_pwd" = "Cambiar contraseña de usuario";
+"ktab_settings_change_language" = "Cambiar el idioma del panel";
+"ktab_settings_change_zone_name" = "Cambiar nombre de zona";
+"ktab_settings_ringing_times" = "Configuración de timbre";
+"ktab_settings_delayed_time" = "Configuración de tiempo de retardo de entrada / salida";
+"ktab_settings_ringing_time" = "Configuración de alarma sonora";
+"ktab_settings_change_rfid_name" = "Cambiar nombre de tag RFID";
+"ktab_settings_deployment_time" = "Configuración de horario de activar / desactivar";
+
+"kmsg_waiting" = "请稍后。。。";
+"kmsg_done" = "发送成功";
+"kmsg_fail" = "Error";
+"kedit" = "Editar";
+"kcancel" = "Cancelar";
+"kok" = "OK";
+"kdelete" = "Eliminar";
+
+"khost" = "Cuenta de panel";
+"kadd_host" = "Agregar nombre de panel";
+"khost_name" = "Nombre de panel";
+"khost_number" = "Número de panel";
+
+"kplease_input_phone_number" = "Por favor ingresar número telefónico";
+
+"kplease_input_msg_number" = "Por favor ingresar número de SMS";
+
+"kplease_input_pwd" = "Por favor ingresar contraseña de 4 dígitos";
+
+"kzone_name_format" = "zona de alarma %ld";
+//"kzone_name2" = "防区2报警";
+//"kzone_name3" = "防区3报警";
+//"kzone_name4" = "防区4报警";
+//"kzone_name5" = "防区5报警";
+//"kzone_name6" = "防区6报警";
+//"kzone_name7" = "防区7报警";
+//"kzone_name8" = "防区8报警";
+//"kzone_name9" = "防区9报警";
+//"kzone_name10" = "防区10报警";
+"krfid_number" = "RFID短信号码";
+"kplease_input_rfid_name" = "Por favor ingresar nombre de tag RFID";
+
+"ktimes" = "tono (s)";
+"kmilles" = "segundo (s)";
+"kseconds" = "minuto (s)";
+"kvolume" = "Volumen";
+"ktime" = "Tiempo";
+"klow" = "Bajo";
+"kmute" = "Mudo";
+"khigh" = "Bajo";
+
+"kdeployment_time" = "Horario de activación";
+"kabandon_time" = "Horario de desactivación";
+"khours" = "时";
+"kminute" = "分";
+"kenter" = "Entrada";
+"kexit" = "Salida";
+
+//"kmore_txt" = "Beautiful landscapes, exotic cultures and a relaxing time all contribute to the perfect journey. Journey can bring us much happiness, people all think about how wonderful their journey will be, but the preparation is also a fun part of one’s trip.";
+
+"kLANGUAGE_CN" = "chino simplificado";
+"kLANGUAGE_EN" = "alemán";
+"kLANGUAGE_FR" = "francés";
+"kLANGUAGE_ES" = "español";
+"kLANGUAGE_AE" = "árabe";
+"kLANGUAGE_DE" = "alemán";
+"kLANGUAGE_RU" = "ruso";
+"kLANGUAGE_PT" = "portugués";
+
