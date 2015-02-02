@@ -9,6 +9,9 @@
 #ifndef iLunch_iLunchConstHeader_h
 #define iLunch_iLunchConstHeader_h
 
+#define kDefaultFontSize(a) [UIFont fontWithName:@"Roboto-Regular" size:a]
+#define kDefaultFont        kDefaultFontSize(16)
+
 #define kThemeColor RGB(80, 180, 40)
 
 #define kBottomButtonHeight 50

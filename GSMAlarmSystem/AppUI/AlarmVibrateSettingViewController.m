@@ -65,6 +65,7 @@
     [_contentView addSubview:_vibrateCount];
     _vibrateCount.selected = YES;
     _vibrateCount.layer.cornerRadius = 5;
+    _vibrateCount.titleLabel.font = kDefaultFont;
     
 #endif
 }
@@ -82,7 +83,7 @@
 - (void)layoutOnIPhone
 {
     [super layoutOnIPhone];
-    [_vibrateCount sizeWith:CGSizeMake(200, 50)];
+    [_vibrateCount sizeWith:CGSizeMake(200, 40)];
     [_vibrateCount layoutParentHorizontalCenter];
     [_vibrateCount layoutBelow:_contentTitle margin:10];
     

@@ -13,6 +13,7 @@
 - (void)addOwnViews
 {
     _version = [[UILabel alloc] init];
+    _version.font = kDefaultFont;
     _version.textAlignment = NSTextAlignmentCenter;
     _version.text = kapp_name;
     [self.view addSubview:_version];

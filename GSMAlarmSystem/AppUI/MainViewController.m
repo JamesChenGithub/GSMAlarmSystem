@@ -32,6 +32,9 @@
 
 - (void)relayoutFrameOfSubViews
 {
+    self.imageView.frame = CGRectFromCGSize(CGSizeMake(40, 40));
+    [self.imageView layoutParentCenter];
+    
     [_bottomLine sizeWith:CGSizeMake(self.bounds.size.width - 10, 2)];
     [_bottomLine layoutParentHorizontalCenter];
     [_bottomLine alignParentBottom];
@@ -79,6 +82,19 @@
         _alarm.menu.message = _alarm.selected ? kGSM_MC_MSG_OFF : kGSM_MC_MSG_ON;
     }
     
+}
+
+- (BOOL)hasBackgroundView
+{
+    return YES;
+}
+
+- (void)configBackground
+{
+    [super configBackground];
+    _backgroundView.image = [UIImage imageNamed:@"tab_menu_bg"];
+//    _backgroundView.contentMode = UIViewContentModeBottom;
+//    _backgroundView.backgroundColor = kClearColor;
 }
 
 - (void)addOwnViews
@@ -143,14 +159,14 @@
 
 #else
 
-#define kHorMargin kDefaultMargin
-#define kVerMargin kDefaultMargin
+#define kHorMargin 0
+#define kVerMargin 0
 
 - (void)layoutOnIPhone
 {
     CGRect rect = self.view.bounds;
     
-    [_lock sizeWith:CGSizeMake((rect.size.width - 2 * kHorMargin)/2, 80)];
+    [_lock sizeWith:CGSizeMake((rect.size.width - 0 * kHorMargin)/2, 80)];
     [_lock alignParentTopWithMargin:kVerMargin];
     [_lock alignParentLeftWithMargin:kHorMargin];
     
@@ -158,7 +174,7 @@
     [_unlock layoutToRightOf:_lock margin:kHorMargin];
     
     
-    [_speaker sizeWith:CGSizeMake((rect.size.width - 2 * kHorMargin)/3, 80)];
+    [_speaker sizeWith:CGSizeMake((rect.size.width - 0 * kHorMargin)/3, 80)];
     [_speaker alignParentLeftWithMargin:kHorMargin];
     [_speaker layoutBelow:_lock margin:kVerMargin];
     

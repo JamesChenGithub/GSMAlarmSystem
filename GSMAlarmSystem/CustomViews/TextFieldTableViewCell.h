@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TextFieldTableViewCell : UITableViewCell
+@interface TextFieldTableViewCell : UITableViewCell<UITextFieldDelegate>
 {
     UITextField *_edit;
 }
 
 @property (nonatomic, readonly) UITextField *edit;
+@property (nonatomic, weak) MenuItem *menu;
 
 - (instancetype)initWith:(NSString *)tip reuseIdentifier:(NSString *)reuseIdentifier;
 - (instancetype)initWith:(NSString *)tip placeHolder:(NSString *)holder reuseIdentifier:(NSString *)reuseIdentifier;

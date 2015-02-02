@@ -29,15 +29,16 @@
     _cancelButton.backgroundColor = RGBOF(0x727272);
     [_cancelButton addTarget:self action:@selector(onClickCancel) forControlEvents:UIControlEventTouchUpInside];
     [_navHead addSubview:_cancelButton];
+    _cancelButton.titleLabel.font = kDefaultFont;
     
     _navTitleLabel = [[UILabel alloc] init];
-    _navTitleLabel.font = [UIFont systemFontOfSize:20];
     _navTitleLabel.textColor =  RGBOF(0xC4C4C4);
 //    _navTitleLabel.backgroundColor = RGBOF(0xC4C4C4);
     _navTitleLabel.textAlignment = NSTextAlignmentCenter;
     _navTitleLabel.text = kapp_name;
     _navTitleLabel.adjustsFontSizeToFitWidth = YES;
     [_navHead addSubview:_navTitleLabel];
+    _navTitleLabel.font = kDefaultFontSize(20);
     
     _doneButton = [[UIButton alloc] init];
     [_doneButton setTitle:kok forState:UIControlStateNormal];
@@ -45,6 +46,7 @@
     _doneButton.backgroundColor = RGBOF(0x727272);
     [_doneButton addTarget:self action:@selector(onClickDone) forControlEvents:UIControlEventTouchUpInside];
     [_navHead addSubview:_doneButton];
+    _doneButton.titleLabel.font = kDefaultFont;
 }
 
 - (void)layoutNavHead

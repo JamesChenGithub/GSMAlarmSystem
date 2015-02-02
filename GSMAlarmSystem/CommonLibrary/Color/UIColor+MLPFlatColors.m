@@ -180,7 +180,7 @@
             color = [UIColor flatGreenColor];
             break;
         case 2:
-            color = [UIColor flatBlueColor];
+            color = kWhiteColor;
             break;
         case 3:
             color = RGBOF(0x92D2Df);

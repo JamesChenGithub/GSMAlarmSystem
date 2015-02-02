@@ -17,6 +17,7 @@
     input.textAlignment = NSTextAlignmentLeft;
     input.keyboardType = UIKeyboardTypeDefault;
     input.returnKeyType = UIReturnKeyDone;
+    input.font = kDefaultFont;
     input.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     
     input.borderStyle = UITextBorderStyleNone;
@@ -24,6 +25,7 @@
     
     input.leftViewMode = UITextFieldViewModeAlways;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, tipSize.width, tipSize.height)];
+    label.font = kDefaultFont;
     label.text = tip;
     label.backgroundColor = [UIColor clearColor];
     input.leftView = label;

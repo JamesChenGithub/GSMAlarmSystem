@@ -20,6 +20,7 @@
 + (instancetype)labelWith:(NSString *)text textColor:(UIColor *)color
 {
     UILabel *label = [[UILabel alloc] init];
+    label.font = kDefaultFont;
     label.text = text;
     label.backgroundColor = [UIColor clearColor];
     label.textColor = color;

@@ -18,12 +18,13 @@
 
 - (void)createButton:(MenuItem *)item
 {
-    MenuButton *button = [MenuButton buttonWithType:UIButtonTypeCustom];
+    MenuButton *button = [[MenuButton alloc] init];
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     button.titleLabel.numberOfLines = 0;
     [button setTitle:[item title] forState:UIControlStateNormal];
     [button setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    button.titleLabel.font = kDefaultFont;
     
     __weak typeof(self) ws = self;
     __weak UIButton *current = button;

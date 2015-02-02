@@ -35,7 +35,7 @@
 
 - (CGFloat)contentHeight
 {
-    return 230;
+    return 260;
 }
 
 #endif

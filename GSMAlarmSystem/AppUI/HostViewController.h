@@ -8,6 +8,17 @@
 
 #import "KeyValueTableViewController.h"
 
+
+@interface HostTableViewCCell : UITableViewCell
+{
+    UILabel     *_title;
+    UIImageView *_next;
+}
+
+@property (nonatomic, readonly) UILabel *title;
+
+@end
+
 @interface HostViewController : KeyValueTableViewController
 {
 @protected

@@ -59,7 +59,7 @@
 
 - (CGFloat)contentHeight
 {
-    return 330;
+    return 360;
 }
 
 - (void)onClickCancel
@@ -80,10 +80,11 @@
     [_contentView layoutParentHorizontalCenter];
     [_contentView alignParentTopWithMargin:80];
     
-    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 30)];
+    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 40)];
     
-    [_tableView sizeWith:CGSizeMake(_contentView.bounds.size.width, _contentView.bounds.size.height - 30)];
-    [_tableView layoutBelow:_contentTitle];
+    [_tableView sizeWith:CGSizeMake(_contentView.bounds.size.width - 30, _contentView.bounds.size.height - 45)];
+    [_tableView layoutParentHorizontalCenter];
+    [_tableView layoutBelow:_contentTitle margin:5];
 }
 
 - (void)addOwnViews
@@ -96,7 +97,9 @@
     
     
     _contentTitle = [[UILabel alloc] init];
-    _contentTitle.textColor = [UIColor flatBlueColor];
+    _contentTitle.font = kDefaultFont;
+
+    _contentTitle.textColor = kWhiteColor;
     _contentTitle.backgroundColor = RGBOF(0xC4C4C4);
     _contentTitle.textAlignment = NSTextAlignmentCenter;
     _contentTitle.text = self.title;
@@ -105,12 +108,23 @@
     _tableView = [[UITableView alloc] init];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _tableView.rowHeight = kDefaultCellHeight;
+    _tableView.rowHeight = 40;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_contentView addSubview:_tableView];
     
 }
 
 #endif
+
+- (void)configOwnViews
+{
+    NSInteger count = [self tableView:_tableView numberOfRowsInSection:0];
+    self.data = [NSMutableArray array];
+    for (NSInteger i = 0; i < count; i++)
+    {
+        [self.data addObject:[[MenuItem alloc] init]];
+    }
+}
 
 
 
@@ -132,14 +146,14 @@
 
 - (NSString *)willSendMessage
 {
-    NSInteger num = [self tableView:_tableView numberOfRowsInSection:0];
+    NSInteger num = self.data.count;
     
     NSMutableString *msg = [NSMutableString string];
     
     for (NSInteger i = 0; i < num; i++)
     {
-        TextFieldTableViewCell *cell = (TextFieldTableViewCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        NSString *text = [cell editText];
+        MenuItem *menu = self.data[i];
+        NSString *text = menu.title;
         
         if (![NSString isEmpty:text])
         {
@@ -176,6 +190,7 @@
         cell = [[TextFieldTableViewCell alloc] initWith:nil placeHolder:[self inputPlaceHolder:indexPath] reuseIdentifier:indentifier];
         cell.edit.keyboardType = UIKeyboardTypeNumberPad;
     }
+    cell.menu = [self.data objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -198,9 +213,10 @@
     
     
     _contentTitle = [[UILabel alloc] init];
+    _contentTitle.font = kDefaultFont;
      
     _contentTitle.font = [UIFont boldSystemFontOfSize:16];
-    _contentTitle.textColor = [UIColor flatBlueColor];
+    _contentTitle.textColor = kWhiteColor;
     _contentTitle.backgroundColor = RGBOF(0xC4C4C4);
     _contentTitle.textAlignment = NSTextAlignmentCenter;
     _contentTitle.text = self.title;
@@ -223,7 +239,7 @@
 #else
 - (CGFloat)contentHeight
 {
-    return 330;
+    return 360;
 }
 
 - (void)onClickCancel
@@ -244,7 +260,7 @@
     [_contentView layoutParentHorizontalCenter];
     [_contentView alignParentTopWithMargin:80];
     
-    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 30)];
+    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 40)];
     
     [_picker layoutParentHorizontalCenter];
     [_picker alignParentBottom];

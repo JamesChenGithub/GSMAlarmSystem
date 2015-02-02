@@ -50,7 +50,7 @@
 #if kNeedNavigationBar
 #else
     _backButton = [[UIButton alloc] init];
-    [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [_backButton setImage:[[UIImage imageNamed:@"back"] imageWithTintColor:kWhiteColor] forState:UIControlStateNormal];
     [_backButton setBackgroundImage:[UIImage imageWithColor:RGBOF(0xB2B1AE)] forState:UIControlStateNormal];
     [_backButton setBackgroundImage:[UIImage imageWithColor:RGBOF(0x92D1DE)] forState:UIControlStateSelected];
     [_backButton addTarget:self action:@selector(onGoBack) forControlEvents:UIControlEventTouchUpInside];

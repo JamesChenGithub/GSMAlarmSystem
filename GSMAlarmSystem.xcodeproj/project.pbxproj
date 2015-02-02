@@ -127,6 +127,7 @@
 		1A6C11241A736E6A00288469 /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6C11231A736E6A00288469 /* AppSetting.m */; };
 		1A6C11271A7370E400288469 /* AddHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6C11261A7370E400288469 /* AddHostViewController.m */; };
 		1A6C112C1A7374A700288469 /* HostKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6C112B1A7374A700288469 /* HostKeyValue.m */; };
+		1AD038CD1A7FBFB20012BC06 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AD038CC1A7FBFB10012BC06 /* Roboto-Regular.ttf */; };
 		1AE064B41A7D39C100D51FAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AE064B61A7D39C100D51FAB /* InfoPlist.strings */; };
 		1AE064B81A7D3B0300D51FAB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AE064BA1A7D3B0300D51FAB /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -404,6 +405,7 @@
 		1A6C11291A73748E00288469 /* ModelHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeaders.h; sourceTree = "<group>"; };
 		1A6C112A1A7374A700288469 /* HostKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostKeyValue.h; sourceTree = "<group>"; };
 		1A6C112B1A7374A700288469 /* HostKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostKeyValue.m; sourceTree = "<group>"; };
+		1AD038CC1A7FBFB10012BC06 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		1AE064B51A7D39C100D51FAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1AE064B71A7D3AD200D51FAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1AE064B91A7D3B0300D51FAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 		1A6C0F4E1A7361DE00288469 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1AD038CC1A7FBFB10012BC06 /* Roboto-Regular.ttf */,
 				1A6C0F4F1A7361DE00288469 /* Info.plist */,
 				1A6C0F501A7361DE00288469 /* main.m */,
 				1A6C10B91A7364A300288469 /* GSMAlarmSystem-Prefix.pch */,
@@ -1009,6 +1012,7 @@
 			files = (
 				1A4CAE161A738E83003B2F23 /* SettingPreference.plist in Resources */,
 				1AE064B41A7D39C100D51FAB /* InfoPlist.strings in Resources */,
+				1AD038CD1A7FBFB20012BC06 /* Roboto-Regular.ttf in Resources */,
 				1AE064B81A7D3B0300D51FAB /* Localizable.strings in Resources */,
 				1A6C0F5C1A7361DE00288469 /* Images.xcassets in Resources */,
 			);

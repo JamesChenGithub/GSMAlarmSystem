@@ -75,6 +75,7 @@
         cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = kBlackColor;
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.textLabel.font = kDefaultFont;
     }
     
     MainMenuItem *kv = _data[indexPath.row];

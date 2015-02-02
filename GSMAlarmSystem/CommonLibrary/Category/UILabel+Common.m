@@ -13,6 +13,7 @@
 + (instancetype)label
 {
     UILabel *label = [[UILabel alloc] init];
+    label.font = kDefaultFont;
     label.textAlignment = NSTextAlignmentLeft;
     label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor blackColor];

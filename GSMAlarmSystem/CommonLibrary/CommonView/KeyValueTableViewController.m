@@ -51,6 +51,7 @@
         cell.textLabel.textColor = kBlackColor;
         cell.detailTextLabel.textColor = kBlackColor;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.font = kDefaultFont;
     }
     
     KeyValue *kv = _data[indexPath.row];

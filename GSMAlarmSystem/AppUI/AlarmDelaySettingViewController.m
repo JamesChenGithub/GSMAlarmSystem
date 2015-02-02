@@ -54,12 +54,14 @@
 {
     
     _enterTip = [[UILabel alloc] init];
+    _enterTip.font = kDefaultFont;
     _enterTip.textAlignment = NSTextAlignmentCenter;
     _enterTip.text = kenter;
     [self.view addSubview:_enterTip];
     
     
     _exitTip = [[UILabel alloc] init];
+    _exitTip.font = kDefaultFont;
     _exitTip.textAlignment = NSTextAlignmentCenter;
     _exitTip.text = kexit;
     [self.view addSubview:_exitTip];
@@ -118,12 +120,14 @@
     [super addOwnViews];
     
     _enterTip = [[UILabel alloc] init];
+    _enterTip.font = kDefaultFont;
     _enterTip.textAlignment = NSTextAlignmentCenter;
     _enterTip.text = kenter;
     [_contentView addSubview:_enterTip];
     
     
     _exitTip = [[UILabel alloc] init];
+    _exitTip.font = kDefaultFont;
     _exitTip.textAlignment = NSTextAlignmentCenter;
     _exitTip.text = kexit;
     [_contentView addSubview:_exitTip];
@@ -133,10 +137,11 @@
     _enter.backgroundColor = RGBOF(0xC4C4C4);
     [_enter setTitle:[NSString stringWithFormat:@"0%@", kmilles] forState:UIControlStateNormal];
     [_enter setTitleColor:kBlackColor forState:UIControlStateNormal];
-    //    [_enter setTitleColor:kWhiteColor forState:UIControlStateSelected];
-    //    [_enter addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
+        [_enter setTitleColor:kWhiteColor forState:UIControlStateSelected];
+        [_enter addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_enter];
     _enter.layer.cornerRadius = 5;
+    _enter.titleLabel.font = kDefaultFont;
     
     
     
@@ -144,26 +149,55 @@
     _exit.backgroundColor = RGBOF(0xC4C4C4);
     [_exit setTitle:[NSString stringWithFormat:@"0%@", kmilles] forState:UIControlStateNormal];
     [_exit setTitleColor:kBlackColor forState:UIControlStateNormal];
-    //    [_exit setTitleColor:kWhiteColor forState:UIControlStateSelected];
-    //    [_exit addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
+        [_exit setTitleColor:kWhiteColor forState:UIControlStateSelected];
+        [_exit addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_exit];
     _exit.layer.cornerRadius = 5;
+    _exit.titleLabel.font = kDefaultFont;
     
     
     
-    //    [self onSelect:_enter];
+        [self onSelect:_enter];
+}
+
+- (void)onSelect:(UIButton *)btn
+{
+    if (btn == _enter)
+    {
+        if (_enter.selected)
+        {
+            return;
+        }
+        
+        _enter.selected = YES;
+        _enter.backgroundColor = RGBOF(0x92D2Df);
+        _exit.selected = NO;
+        _exit.backgroundColor = RGBOF(0xC4C4C4);
+    }
+    else
+    {
+        if (_exit.selected)
+        {
+            return;
+        }
+        
+        _exit.selected = YES;
+        _exit.backgroundColor = RGBOF(0x92D2Df);
+        _enter.selected = NO;
+        _enter.backgroundColor = RGBOF(0xC4C4C4);
+    }
 }
 
 - (CGFloat)contentHeight
 {
-    return 200;
+    return 230;
 }
 
 - (void)layoutOnIPhone
 {
     [super layoutOnIPhone];
     
-    CGSize size = CGSizeMake(120, 50);
+    CGSize size = CGSizeMake(120, 40);
     
     [_enterTip sizeWith:size];
     [_enterTip layoutParentHorizontalCenter];

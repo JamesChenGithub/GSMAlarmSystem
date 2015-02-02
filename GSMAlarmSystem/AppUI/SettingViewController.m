@@ -20,28 +20,29 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
         self.backgroundColor = RGBOF(0xC4C4C4);
-        self.layer.cornerRadius = 5;
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = 8;
     }
     return self;
 }
 
-//- (void)layoutSubviews
-//{
-//    [super layoutSubviews];
-//    [self relayoutFrameOfSubViews];
-//}
-//
-//- (void)relayoutFrameOfSubViews
-//{
-//    CGRect rect = self.contentView.bounds;
-//    self.imageView.frame = CGRectMake(0, 0, 50, 50);
-//    [self.imageView layoutParentVerticalCenter];
-//    
-//    self.textLabel.frame = CGRectMake(50, 0, rect.size.width - 50, rect.size.height);
-//    [self.textLabel layoutParentVerticalCenter];
-//    
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self relayoutFrameOfSubViews];
+}
+
+- (void)relayoutFrameOfSubViews
+{
+    CGRect rect = self.contentView.bounds;
+    self.imageView.frame = CGRectMake(8, 0, 40, 40);
+    [self.imageView layoutParentVerticalCenter];
+    
+    self.textLabel.frame = CGRectMake(56, 0, rect.size.width - 56, rect.size.height);
+    [self.textLabel layoutParentVerticalCenter];
+    
 //    self.layer.cornerRadius = 8;
-//}
+}
 
 @end
 
@@ -104,9 +105,12 @@
     if (!cell)
     {
         cell = [[SettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMainTableCellIdentifier];
+        cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        cell.textLabel.numberOfLines = 0;
         cell.textLabel.textColor = kBlackColor;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.font = kDefaultFont;
     }
     
     MenuItem *kv = _data[indexPath.section];

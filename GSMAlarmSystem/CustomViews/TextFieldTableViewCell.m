@@ -23,6 +23,8 @@
         _edit.placeholder = holder;
         _edit.layer.cornerRadius = 3;
         _edit.backgroundColor = RGBOF(0xEFEFF0);
+        _edit.font = kDefaultFont;
+        _edit.delegate = self;
         [self.contentView addSubview:_edit];
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -40,8 +42,10 @@
     {
         _edit = [[UITextField alloc] initLeftWith:tip rightImageWith:icon action:act];
         _edit.placeholder = holder;
-        _edit.layer.cornerRadius = 5;
+        _edit.layer.cornerRadius = 8;
         _edit.backgroundColor = RGBOF(0xEFEFF0);
+        _edit.delegate = self;
+        _edit.font = kDefaultFont;
         [self.contentView addSubview:_edit];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -64,6 +68,12 @@
 - (NSString *)editText
 {
     return _edit.text;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    self.menu.title = textField.text;
+    return YES;
 }
 
 @end

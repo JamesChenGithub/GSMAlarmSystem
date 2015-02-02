@@ -7,6 +7,50 @@
 //
 
 #import "HostViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
+@implementation HostTableViewCCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
+    {
+        _title = [[UILabel alloc] init];
+        _title.font = kDefaultFont;
+        _title.textAlignment = NSTextAlignmentCenter;
+        _title.backgroundColor = RGBOF(0xEFEFF0);
+        [self.contentView addSubview:_title];
+//        _title.layer.borderWidth = 1;
+        _title.layer.masksToBounds = YES;
+//        _title.layer.borderColor = [kRedColor CGColor];
+        _title.layer.cornerRadius = 5;
+        
+        _next = [[UIImageView alloc] init];
+        _next.image = [[UIImage imageNamed:@"next"] imageWithTintColor:kWhiteColor];
+        [self.contentView addSubview:_next];
+        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self relayoutFrameOfSubViews];
+}
+
+- (void)relayoutFrameOfSubViews
+{
+    CGRect rect = self.contentView.bounds;
+    _title.frame = CGRectInset(rect, 0, 5);
+
+    [_next sizeWith:CGSizeMake(15, 15)];
+    [_next layoutParentVerticalCenter];
+    [_next alignParentRightWithMargin:kDefaultMargin];
+}
+
+@end
 
 @implementation HostViewController
 
@@ -20,6 +64,7 @@
     
     [self addEditBarItem];
 }
+
 #endif
 
 - (void)addEditBarItem
@@ -40,6 +85,12 @@
     {
          self.navigationItem.rightBarButtonItem.title = kedit;
     }
+    
+#if kNeedNavigationBar
+#else
+    NSString *title = _tableView.editing ? kok : kedit;
+    [_editButton setTitle:title forState:UIControlStateNormal];
+#endif
 }
 
 - (void)configOwnViews
@@ -69,6 +120,7 @@
     _editButton.backgroundColor = RGBOF(0x727272);
     [_editButton addTarget:self action:@selector(onEdit) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_editButton];
+    _editButton.titleLabel.font = kDefaultFont;
     
     
     _contentView = [[UIView alloc] init];
@@ -77,17 +129,20 @@
     
     
     _contentTitle = [[UILabel alloc] init];
-    _contentTitle.textColor = [UIColor flatBlueColor];
+    _contentTitle.textColor = kWhiteColor;
     _contentTitle.backgroundColor = RGBOF(0xC4C4C4);
     _contentTitle.textAlignment = NSTextAlignmentCenter;
     _contentTitle.text = khost;
+    _contentTitle.font = kDefaultFont;
     [_contentView addSubview:_contentTitle];
     
     _tableView = [[UITableView alloc] init];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _tableView.rowHeight = kDefaultCellHeight;
+    _tableView.rowHeight = 40;
+    _tableView.backgroundColor = kClearColor;
     [_contentView addSubview:_tableView];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     _addHost = [[UIButton alloc] init];
     _addHost.backgroundColor = RGBOF(0xC4C4C4);
@@ -95,6 +150,7 @@
     [_addHost setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [_addHost addTarget:self action:@selector(onAddHost:) forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_addHost];
+    _addHost.titleLabel.font = kDefaultFont;
 }
 
 
@@ -140,42 +196,41 @@
     [_editButton alignParentTopWithMargin:30];
     _editButton.layer.cornerRadius = 5;
     
-    [_contentView sizeWith:CGSizeMake(self.view.bounds.size.width - 40, 280)];
+    [_contentView sizeWith:CGSizeMake(self.view.bounds.size.width - 40, 330)];
     [_contentView layoutParentHorizontalCenter];
     [_contentView alignParentTopWithMargin:80];
     
-    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 30)];
+    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 40)];
     
-    [_addHost sizeWith:CGSizeMake(_contentView.bounds.size.width - 40, 30)];
-    [_addHost alignParentBottomWithMargin:5];
+    [_addHost sizeWith:CGSizeMake(_contentView.bounds.size.width - 80, 30)];
+    [_addHost alignParentBottomWithMargin:40];
     [_addHost layoutParentHorizontalCenter];
     _addHost.layer.cornerRadius = 5;
     
     
-    [_tableView sizeWith:CGSizeMake(_contentView.bounds.size.width, _contentView.bounds.size.height - 70)];
-    [_tableView layoutBelow:_contentTitle];
+    [_tableView sizeWith:CGSizeMake(_contentView.bounds.size.width - 60, _contentView.bounds.size.height - 120)];
+    
+    [_tableView layoutParentHorizontalCenter];
+    [_tableView layoutBelow:_contentTitle margin:10];
     
 }
 
 #endif
 
+
 #define kMainTableCellIdentifier @"kMainTableCellIdentifier"
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[UITableViewCell appearance] setTintColor:kWhiteColor];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kMainTableCellIdentifier];
+    HostTableViewCCell *cell = [tableView dequeueReusableCellWithIdentifier:kMainTableCellIdentifier];
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMainTableCellIdentifier];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.textColor = kBlackColor;
-
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell = [[HostTableViewCCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMainTableCellIdentifier];
     }
     
     KeyValue *kv = _data[indexPath.row];
-    cell.textLabel.text = kv.key;
+    cell.title.text = kv.key;
     return cell;
 }
 
@@ -188,6 +243,8 @@
     [[AppDelegate sharedAppDelegate] pushViewController:vc];
     
 }
+
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {

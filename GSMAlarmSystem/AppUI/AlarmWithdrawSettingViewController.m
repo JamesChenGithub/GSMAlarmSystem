@@ -100,6 +100,16 @@
 
 #else
 
+- (void)onClickCancel
+{
+    [[AppDelegate sharedAppDelegate] popViewController];
+}
+
+- (void)onClickDone
+{
+    [self onSettingDone];
+}
+
 - (void)addOwnViews
 {
     
@@ -111,7 +121,8 @@
     
     
     _contentTitle = [[UILabel alloc] init];
-    _contentTitle.textColor = [UIColor flatBlueColor];
+    _contentTitle.font = kDefaultFont;
+    _contentTitle.textColor = kWhiteColor;
     _contentTitle.backgroundColor = RGBOF(0xC4C4C4);
     _contentTitle.textAlignment = NSTextAlignmentCenter;
     _contentTitle.text = self.title;
@@ -119,12 +130,14 @@
     
     
     _setAlarmTip = [[UILabel alloc] init];
+    _setAlarmTip.font = kDefaultFont;
     _setAlarmTip.textAlignment = NSTextAlignmentCenter;
     _setAlarmTip.text = kdeployment_time;
     [_contentView addSubview:_setAlarmTip];
     
     
     _withdrawTip = [[UILabel alloc] init];
+    _withdrawTip.font = kDefaultFont;
     _withdrawTip.textAlignment = NSTextAlignmentCenter;
     _withdrawTip.text = kabandon_time;
     [_contentView addSubview:_withdrawTip];
@@ -137,6 +150,7 @@
     [_setAlarm addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_setAlarm];
     _setAlarm.layer.cornerRadius = 5;
+    _setAlarm.titleLabel.font = kDefaultFont;
     
     
     
@@ -148,6 +162,7 @@
     [_withdraw addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_withdraw];
     _withdraw.layer.cornerRadius = 5;
+    _withdraw.titleLabel.font = kDefaultFont;
     
     _picker = [[UIDatePicker alloc] init];
     _picker.datePickerMode = UIDatePickerModeTime;
@@ -168,9 +183,9 @@
     [_contentView layoutParentHorizontalCenter];
     [_contentView alignParentTopWithMargin:80];
     
-    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 30)];
+    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 40)];
     
-    CGSize size = CGSizeMake(120, 50);
+    CGSize size = CGSizeMake(120, 40);
     
     [_setAlarmTip sizeWith:size];
     [_setAlarmTip layoutParentHorizontalCenter];
@@ -193,7 +208,7 @@
 
 - (CGFloat)contentHeight
 {
-    return 200;
+    return 230;
 }
 #endif
 
@@ -210,8 +225,6 @@
 
 - (void)onSelect:(UIButton *)btn
 {
-    
-    
     if (btn == _setAlarm)
     {
         if (_setAlarm.selected)

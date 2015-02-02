@@ -8,6 +8,7 @@
 
 #import "AddHostViewController.h"
 
+
 @interface AddHostViewController ()
 
 @property (nonatomic, copy) CommonBlock doneAction;
@@ -121,7 +122,8 @@
     
     
     _contentTitle = [[UILabel alloc] init];
-    _contentTitle.textColor = [UIColor flatBlueColor];
+    _contentTitle.font = kDefaultFont;
+    _contentTitle.textColor = kWhiteColor;
     _contentTitle.backgroundColor = RGBOF(0xC4C4C4);
     _contentTitle.textAlignment = NSTextAlignmentCenter;
     _contentTitle.text = kadd_host;
@@ -130,11 +132,13 @@
     _hostName = [[UITextField alloc] init];
     _hostName.placeholder = khost_name;
     _hostName.backgroundColor = RGBOF(0xEFEFF0);
+    _hostName.font = kDefaultFont;
     [_contentView addSubview:_hostName];
     
     _hostNum = [[UITextField alloc] init];
     _hostNum.placeholder = khost_number;
     _hostNum.backgroundColor = RGBOF(0xEFEFF0);
+    _hostNum.font = kDefaultFont;
     _hostNum.keyboardType = UIKeyboardTypeNumberPad;
     [_contentView addSubview:_hostNum];
     
@@ -146,14 +150,14 @@
 {
     [self layoutNavHead];
     
-    [_contentView sizeWith:CGSizeMake(self.view.bounds.size.width - 40, 200)];
+    [_contentView sizeWith:CGSizeMake(self.view.bounds.size.width - 40, 250)];
     [_contentView layoutParentHorizontalCenter];
     [_contentView alignParentTopWithMargin:80];
     
-    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 30)];
+    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 40)];
     
     CGSize size = _contentView.bounds.size;
-    [_hostName sizeWith:CGSizeMake(size.width - 30, 44)];
+    [_hostName sizeWith:CGSizeMake(size.width - 30, 30)];
     [_hostName layoutParentHorizontalCenter];
     [_hostName layoutBelow:_contentTitle margin:20];
     

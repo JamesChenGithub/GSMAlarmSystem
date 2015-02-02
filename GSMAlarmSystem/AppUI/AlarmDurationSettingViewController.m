@@ -115,12 +115,14 @@
     [super addOwnViews];
     
     _volumeTip = [[UILabel alloc] init];
+    _volumeTip.font = kDefaultFont;
     _volumeTip.textAlignment = NSTextAlignmentCenter;
     _volumeTip.text = kvolume;
     [_contentView addSubview:_volumeTip];
     
     
     _timeTip = [[UILabel alloc] init];
+    _timeTip.font = kDefaultFont;
     _timeTip.textAlignment = NSTextAlignmentCenter;
     _timeTip.text = ktime;
     [_contentView addSubview:_timeTip];
@@ -129,10 +131,11 @@
     _volume.backgroundColor = RGBOF(0xC4C4C4);
     [_volume setTitle:kmute forState:UIControlStateNormal];
     [_volume setTitleColor:kBlackColor forState:UIControlStateNormal];
-    //    [_volume setTitleColor:kWhiteColor forState:UIControlStateSelected];
-    //    [_volume addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
+    [_volume setTitleColor:kWhiteColor forState:UIControlStateSelected];
+    [_volume addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_volume];
     _volume.layer.cornerRadius = 5;
+    _volume.titleLabel.font = kDefaultFont;
     
     
     
@@ -140,24 +143,55 @@
     _time.backgroundColor = RGBOF(0xC4C4C4);
     [_time setTitle:[NSString stringWithFormat:@"3%@", kseconds] forState:UIControlStateNormal];
     [_time setTitleColor:kBlackColor forState:UIControlStateNormal];
-    //    [_time setTitleColor:kWhiteColor forState:UIControlStateSelected];
-    //    [_time addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
+        [_time setTitleColor:kWhiteColor forState:UIControlStateSelected];
+        [_time addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_time];
     _time.layer.cornerRadius = 5;
+    _time.titleLabel.font = kDefaultFont;
+    
+    [self onSelect:_volume];
     
     [_picker selectRow:2 inComponent:1 animated:YES];
 }
 
+- (void)onSelect:(UIButton *)btn
+{
+    if (btn == _volume)
+    {
+        if (_volume.selected)
+        {
+            return;
+        }
+        
+        _volume.selected = YES;
+        _volume.backgroundColor = RGBOF(0x92D2Df);
+        _time.selected = NO;
+        _time.backgroundColor = kLightGrayColor;
+    }
+    else
+    {
+        if (_time.selected)
+        {
+            return;
+        }
+        
+        _time.selected = YES;
+        _time.backgroundColor = RGBOF(0x92D2Df);
+        _volume.selected = NO;
+        _volume.backgroundColor = kLightGrayColor;
+    }
+}
+
 - (CGFloat)contentHeight
 {
-    return 200;
+    return 230;
 }
 
 - (void)layoutOnIPhone
 {
     [super layoutOnIPhone];
     
-    CGSize size = CGSizeMake(120, 50);
+    CGSize size = CGSizeMake(120, 40);
     
     [_volumeTip sizeWith:size];
     [_volumeTip layoutParentHorizontalCenter];

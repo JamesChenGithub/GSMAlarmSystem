@@ -36,7 +36,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName:kWhiteColor,
                                                            NSShadowAttributeName:shadow,
-                                                           NSFontAttributeName:[UIFont systemFontOfSize:18]
+                                                           NSFontAttributeName:[UIFont fontWithName:@"Roboto-Regular" size:18]
                                                           }];
     
     
@@ -50,9 +50,15 @@
     
     [[UIButton appearance] setTitleColor:kBlackColor forState:UIControlStateNormal];
     
-    [[UITableViewCell appearance] setBackgroundColor:kClearColor];
+//    [[UITableViewCell appearance] setBackgroundColor:kClearColor];
     
-    [[UITableViewCell appearance] setTintColor:kThemeColor];
+//    [[UITableViewCell appearance] setTintColor:kThemeColor];
+    
+//    Roboto-Regular.ttf
+    
+    [[UIButton appearance].titleLabel  setFont:[UIFont fontWithName:@"Roboto-Regular" size:12]];
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"Roboto-Regular" size:16]];
+    [[UITableViewCell appearance].textLabel setFont:[UIFont fontWithName:@"Roboto-Regular" size:16]];
     
     
 }
