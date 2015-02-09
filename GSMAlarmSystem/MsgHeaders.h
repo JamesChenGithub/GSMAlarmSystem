@@ -29,8 +29,8 @@
 #define kGSM_MC_RENAME_ZONE             @"Zones names:\n"
 #define kGSM_MC_CHANGE_RFID_NAME        @"Rename RFID tags:\n"
 #define kGSM_MC_RINGING_TIMES           @"Ringing time:"
-#define kGSM_MC_DELAYED_ENTRY           @"Entry delay time(0-300sec):"
-#define kGSM_MC_DELAYED_EXIT            @"Exit delay time(0-300sec):"
+#define kGSM_MC_DELAYED_ENTRY           @"Entry delay time(0-255sec):"
+#define kGSM_MC_DELAYED_EXIT            @"Exit delay time(0-255sec):"
 #define kGSM_MC_ARM_DISARM_TIME         @"Arm time and disarm time:"
 
 #define kGSM_MC_VOLUME                  @"Siren volume(0=Mute,1=High):"

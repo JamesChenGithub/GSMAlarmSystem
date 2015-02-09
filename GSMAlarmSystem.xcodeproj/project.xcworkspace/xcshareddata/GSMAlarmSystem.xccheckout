@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>43119BE1-E22B-4364-8A9A-8C0F591FB85D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GSMAlarmSystem</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FB193A93C3A6825D120405D11FB15D1F327C8DC6</key>
+		<string>https://github.com/JamesChenGithub/GSMAlarmSystem.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GSMAlarmSystem.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FB193A93C3A6825D120405D11FB15D1F327C8DC6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/JamesChenGithub/GSMAlarmSystem.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FB193A93C3A6825D120405D11FB15D1F327C8DC6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FB193A93C3A6825D120405D11FB15D1F327C8DC6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GSMAlarmSystem</string>
+		</dict>
+	</array>
+</dict>
+</plist>

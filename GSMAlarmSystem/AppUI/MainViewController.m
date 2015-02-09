@@ -113,8 +113,8 @@
     _alarm = [self create:[[MainMenuItem alloc] initWithMsg:kGSM_MC_SPEAKER_ON icon:[UIImage imageNamed:@"speaker"] action:nil]];
     [_alarm setImage:[UIImage imageNamed:@"speaker off"] forState:UIControlStateSelected];
     
-    _callin = [self create:[[MainMenuItem alloc] initWithMsg:kGSM_MC_TALK icon:[UIImage imageNamed:@"talk"] action:nil]];
     _callout = [self create:[[MainMenuItem alloc] initWithMsg:kGSM_MC_MONITOR icon:[UIImage imageNamed:@"remute"] action:nil]];
+    _callin = [self create:[[MainMenuItem alloc] initWithMsg:kGSM_MC_TALK icon:[UIImage imageNamed:@"talk"] action:nil]];
 }
 #if kNeedNavigationBar
 - (void)layoutOnIPhone
@@ -148,13 +148,17 @@
     [_alarm sameWith:_sos];
     [_alarm layoutBelow:_sos margin:kDefaultMargin];
     
-    [_callin sameWith:_lock];
-    [_callin layoutBelow:_msg margin:kDefaultMargin];
+//    [_callin sameWith:_lock];
+//    [_callin layoutBelow:_msg margin:kDefaultMargin];
+//    
+//    [_callout sameWith:_unlock];
+//    [_callout layoutBelow:_alarm margin:kDefaultMargin];
     
-    [_callout sameWith:_unlock];
-    [_callout layoutBelow:_alarm margin:kDefaultMargin];
+    [_callout sameWith:_lock];
+    [_callout layoutBelow:_msg margin:kVerMargin];
     
-    
+    [_callin sameWith:_unlock];
+    [_callin layoutBelow:_alarm margin:kVerMargin];
 }
 
 #else
@@ -193,12 +197,18 @@
     [_alarm sameWith:_sos];
     [_alarm layoutBelow:_sos margin:kVerMargin];
     
-    [_callin sameWith:_lock];
-    [_callin layoutBelow:_msg margin:kVerMargin];
+//    [_callin sameWith:_lock];
+//    [_callin layoutBelow:_msg margin:kVerMargin];
+//    
+//    [_callout sameWith:_unlock];
+//    [_callout layoutBelow:_alarm margin:kVerMargin];
+
     
-    [_callout sameWith:_unlock];
-    [_callout layoutBelow:_alarm margin:kVerMargin];
+    [_callout sameWith:_lock];
+    [_callout layoutBelow:_msg margin:kVerMargin];
     
+    [_callin sameWith:_unlock];
+    [_callin layoutBelow:_alarm margin:kVerMargin];
     
 }
 #endif
