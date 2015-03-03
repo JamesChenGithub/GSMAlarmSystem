@@ -6,7 +6,7 @@
   Copyright (c) 2015年 James Chen. All rights reserved.
 */
 
-"kapp_name" = "GSM报警系统";
+"kapp_name" = "OPEXIA EZHUOME";
 
 "ktab_menu" = "Main menu";
 "ktab_settings" = "System setting";
@@ -98,5 +98,9 @@
 "kLANGUAGE_DE" = "German";
 "kLANGUAGE_RU" = "Russian";
 "kLANGUAGE_PT" = "Portuguese";
+
+"kDonotSupportMSG" = "The device does not support SMS";
+"kPleaseInputInformation" = "Please input the information";
+
 
 

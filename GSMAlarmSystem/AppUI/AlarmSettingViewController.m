@@ -24,7 +24,16 @@
 
 - (void)onSettingDone
 {
-    [self sendMessage:[self willSendMessage]];
+    NSString *msg = [self willSendMessage];
+    
+    if (![NSString isEmpty:msg])
+    {
+        [self sendMessage:msg];
+    }
+    else
+    {
+        [[HUDHelper sharedInstance] tipMessage:kPleaseInputInformation];
+    }
 }
 
 - (NSString *)willSendMessageTitle
@@ -137,6 +146,10 @@
     {
         [self sendMessage:msg];
     }
+    else
+    {
+        [[HUDHelper sharedInstance] tipMessage:kPleaseInputInformation];
+    }
 }
 
 - (NSString *)willSendMessageTitle
@@ -211,11 +224,8 @@
     _contentView.backgroundColor = kWhiteColor;
     [self.view addSubview:_contentView];
     
-    
     _contentTitle = [[UILabel alloc] init];
     _contentTitle.font = kDefaultFont;
-     
-    _contentTitle.font = [UIFont boldSystemFontOfSize:16];
     _contentTitle.textColor = kWhiteColor;
     _contentTitle.backgroundColor = RGBOF(0xC4C4C4);
     _contentTitle.textAlignment = NSTextAlignmentCenter;

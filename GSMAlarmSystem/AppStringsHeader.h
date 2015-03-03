@@ -141,6 +141,9 @@
 #define kLANGUAGE_RU             Localized(@"kLANGUAGE_RU")
 #define kLANGUAGE_PT             Localized(@"kLANGUAGE_PT")
 
+#define kDonotSupportMSG         Localized(@"kDonotSupportMSG")
+#define kPleaseInputInformation  Localized(@"kPleaseInputInformation")
+
 
 
 

@@ -129,6 +129,10 @@
         
         [[AppDelegate sharedAppDelegate].topViewController presentViewController:picker animated:YES completion:completion];
     }
+    else
+    {
+        [[HUDHelper sharedInstance] tipMessage:kDonotSupportMSG];
+    }
 }
 
 

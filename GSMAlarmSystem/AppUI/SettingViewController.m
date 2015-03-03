@@ -107,7 +107,7 @@
         cell = [[SettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kMainTableCellIdentifier];
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         cell.textLabel.numberOfLines = 0;
-        cell.textLabel.textColor = kBlackColor;
+        cell.textLabel.textColor = kWhiteColor;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.font = kDefaultFont;

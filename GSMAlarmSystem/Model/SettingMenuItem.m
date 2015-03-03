@@ -15,7 +15,7 @@
     if (!_icon)
     {
 //        _icon = [UIImage imageWithColor:kRandomFlatColor size:CGSizeMake(40, 40)];
-        return [UIImage imageNamed:self.iconName];
+        _icon = [UIImage imageNamed:self.iconName];
     }
     return _icon;
 }
