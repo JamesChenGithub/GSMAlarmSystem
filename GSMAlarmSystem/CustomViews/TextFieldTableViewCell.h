@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class TextFieldTableViewCell;
+
+typedef void (^TextFieldCellNextAction)(TextFieldTableViewCell *cell);
 
 @interface TextFieldTableViewCell : UITableViewCell<UITextFieldDelegate>
 {
@@ -16,6 +19,7 @@
 
 @property (nonatomic, readonly) UITextField *edit;
 @property (nonatomic, weak) MenuItem *menu;
+@property (nonatomic, copy) TextFieldCellNextAction nextAction;
 
 - (instancetype)initWith:(NSString *)tip reuseIdentifier:(NSString *)reuseIdentifier;
 - (instancetype)initWith:(NSString *)tip placeHolder:(NSString *)holder reuseIdentifier:(NSString *)reuseIdentifier;

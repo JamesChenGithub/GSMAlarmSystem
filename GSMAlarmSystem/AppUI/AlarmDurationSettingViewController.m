@@ -64,8 +64,8 @@
     _volume.backgroundColor = RGBOF(0xC4C4C4);;
     [_volume setTitle:kmute forState:UIControlStateNormal];
     [_volume setTitleColor:kBlackColor forState:UIControlStateNormal];
-//    [_volume setTitleColor:kWhiteColor forState:UIControlStateSelected];
-//    [_volume addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
+    //    [_volume setTitleColor:kWhiteColor forState:UIControlStateSelected];
+    //    [_volume addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_volume];
     _volume.layer.cornerRadius = 5;
     
@@ -75,14 +75,14 @@
     _time.backgroundColor = RGBOF(0xC4C4C4);
     [_time setTitle:[NSString stringWithFormat:@"3%@", kseconds] forState:UIControlStateNormal];
     [_time setTitleColor:kBlackColor forState:UIControlStateNormal];
-//    [_time setTitleColor:kWhiteColor forState:UIControlStateSelected];
-//    [_time addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
+    //    [_time setTitleColor:kWhiteColor forState:UIControlStateSelected];
+    //    [_time addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_time];
     _time.layer.cornerRadius = 5;
     
     [super addOwnViews];
     
-//    [self onSelect:_volume];
+    //    [self onSelect:_volume];
     
     [_picker selectRow:2 inComponent:1 animated:YES];
 }
@@ -129,7 +129,7 @@
     
     _volume = [[UIButton alloc] init];
     _volume.backgroundColor = RGBOF(0xC4C4C4);
-    [_volume setTitle:kmute forState:UIControlStateNormal];
+    [_volume setTitle:@"0" forState:UIControlStateNormal];
     [_volume setTitleColor:kBlackColor forState:UIControlStateNormal];
     [_volume setTitleColor:kWhiteColor forState:UIControlStateSelected];
     [_volume addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
@@ -143,8 +143,8 @@
     _time.backgroundColor = RGBOF(0xC4C4C4);
     [_time setTitle:[NSString stringWithFormat:@"3%@", kseconds] forState:UIControlStateNormal];
     [_time setTitleColor:kBlackColor forState:UIControlStateNormal];
-        [_time setTitleColor:kWhiteColor forState:UIControlStateSelected];
-        [_time addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
+    [_time setTitleColor:kWhiteColor forState:UIControlStateSelected];
+    [_time addTarget:self action:@selector(onSelect:) forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_time];
     _time.layer.cornerRadius = 5;
     _time.titleLabel.font = kDefaultFont;
@@ -224,7 +224,7 @@
 {
     if (component == 0)
     {
-        return 2;
+        return 6;
     }
     else
     {
@@ -236,14 +236,15 @@
 {
     if (component == 0)
     {
-        if (row == 0)
-        {
-            return kmute;
-        }
-        else
-        {
-            return khigh;
-        }
+        //        if (row == 0)
+        //        {
+        //            return kmute;
+        //        }
+        //        else
+        //        {
+        //            return khigh;
+        //        }
+        return [NSString stringWithFormat:@"%ld", (long)row];
     }
     else
     {

@@ -76,5 +76,21 @@
     return YES;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField.returnKeyType == UIReturnKeyDone)
+    {
+        [textField resignFirstResponder];
+    }
+    else
+    {
+        if (self.nextAction)
+        {
+            self.nextAction(self);
+        }
+        
+    }
+    return YES;
+}
 @end
 
