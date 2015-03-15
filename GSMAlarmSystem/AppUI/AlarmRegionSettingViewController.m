@@ -44,20 +44,20 @@
     {
         cell = [[TextFieldTableViewCell alloc] initWith:nil placeHolder:[self inputPlaceHolder:indexPath] reuseIdentifier:indentifier];
         
-//        __weak typeof(tableView) wt = tableView;
-//        cell.nextAction = ^(TextFieldTableViewCell *curcell) {
-//            NSIndexPath *path = [wt indexPathForCell:curcell];
-//            NSIndexPath *nextPath = [NSIndexPath indexPathForRow:path.row + 1 inSection:path.section];
-//            [wt scrollToRowAtIndexPath:nextPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-//            TextFieldTableViewCell *nextCell = (TextFieldTableViewCell *)[wt cellForRowAtIndexPath:nextPath];
-//            
+        __weak typeof(tableView) wt = tableView;
+        cell.nextAction = ^(TextFieldTableViewCell *curcell) {
+            NSIndexPath *path = [wt indexPathForCell:curcell];
+            NSIndexPath *nextPath = [NSIndexPath indexPathForRow:path.row + 1 inSection:path.section];
+            [wt scrollToRowAtIndexPath:nextPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            TextFieldTableViewCell *nextCell = (TextFieldTableViewCell *)[wt cellForRowAtIndexPath:nextPath];
+            
 //            CGFloat rowheight = 100;
 //            if (abs(wt.contentOffset.y + wt.bounds.size.height - wt.contentSize.height) < rowheight)
 //            {
 //                wt.contentOffset = CGPointMake(wt.contentOffset.x, wt.contentOffset.y + 2 * rowheight);
 //            }
-//            [nextCell.edit becomeFirstResponder];
-//        };
+            [nextCell.edit becomeFirstResponder];
+        };
 
     }
     
