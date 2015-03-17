@@ -14,6 +14,12 @@
 
 @implementation AlarmRFIDSettingViewController
 
+- (CGFloat)contentHeight
+{
+    return 355;
+}
+
+
 - (NSString *)willSendMessageTitle
 {
     return kGSM_MC_CHANGE_RFID_NAME;
@@ -28,7 +34,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 10;
 }
 
 #define kAlarmRFIDCell @"kAlarmRFIDCell"
@@ -70,6 +76,21 @@
     
     cell.menu = [self.data objectAtIndex:indexPath.row];
     return cell;
+}
+
+- (void)layoutOnIPhone
+{
+    [self layoutNavHead];
+    
+    [_contentView sizeWith:CGSizeMake(self.view.bounds.size.width - 40, [self contentHeight])];
+    [_contentView layoutParentHorizontalCenter];
+    [_contentView alignParentTopWithMargin:80];
+    
+    [_contentTitle sizeWith:CGSizeMake(_contentView.bounds.size.width, 40)];
+    
+    [_tableView sizeWith:CGSizeMake(_contentView.bounds.size.width - 30, _contentView.bounds.size.height - 75)];
+    [_tableView layoutParentHorizontalCenter];
+    [_tableView layoutBelow:_contentTitle margin:5];
 }
 
 
