@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< Updated upstream
 	<string>43119BE1-E22B-4364-8A9A-8C0F591FB85D</string>
+=======
+	<string>D5DF219A-2C3D-4A29-B2EE-03D0E5EBA02A</string>
+>>>>>>> Stashed changes
 	<key>IDESourceControlProjectName</key>
 	<string>GSMAlarmSystem</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
