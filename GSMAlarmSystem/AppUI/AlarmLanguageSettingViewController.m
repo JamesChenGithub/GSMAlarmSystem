@@ -20,7 +20,7 @@
     self.data = [NSMutableArray array];
     
     MainMenuItem *item = [[MainMenuItem alloc] init];
-    item.title = kLANGUAGE_AE;
+    item.title = kLANGUAGE_CN;
     item.message = kGSM_MC_LANGUAGE_CN;
     [self.data addObject:item];
     

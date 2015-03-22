@@ -54,7 +54,7 @@
 	
 "kplease_input_pwd" = "Entrer un mot de passe à 4 chiffres";
 
-"kzone_name_format" = "Zone alarme %ld";
+"kzone_name_format" = "Sensor alarme %ld";
 //"kzone_name2" = "防区2报警";
 //"kzone_name3" = "防区3报警";
 //"kzone_name4" = "防区4报警";

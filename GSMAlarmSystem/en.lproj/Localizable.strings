@@ -28,7 +28,7 @@
 "ktab_settings_msg_settings" = "Alarm SMS number setting";
 "ktab_settings_change_pwd" = "Change user password";
 "ktab_settings_change_language" = "Change panel language";
-"ktab_settings_change_zone_name" = "Change zone name";
+"ktab_settings_change_zone_name" = "Change sensor name";
 "ktab_settings_ringing_times" = "Ringing times setting";
 "ktab_settings_delayed_time" = "Delay entry / exit time setting";
 "ktab_settings_ringing_time" = "Siren time setting";
@@ -55,7 +55,7 @@
 			
 "kplease_input_pwd" = "Please enter 4 digits password";
 
-"kzone_name_format" = "Zone %ld alarm";
+"kzone_name_format" = "Sensor %ld alarm";
 //"kzone_name2" = "防区2报警";
 //"kzone_name3" = "防区3报警";
 //"kzone_name4" = "防区4报警";

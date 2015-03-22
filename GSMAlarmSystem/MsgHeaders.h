@@ -26,7 +26,7 @@
 #define kGSM_MC_PHONE_NUM_SETTINGS      @"Phone numbers:\n"
 #define kGSM_MC_SMS_NUM_SETTINGS        @"SMS numbers:\n"
 #define kGSM_MC_CHANGE_PWD              @"Disarm password(4 digits):"
-#define kGSM_MC_RENAME_ZONE             @"Zones names:\n"
+#define kGSM_MC_RENAME_ZONE             @"Sensors names:\n"
 #define kGSM_MC_CHANGE_RFID_NAME        @"Rename RFID tags:\n"
 #define kGSM_MC_RINGING_TIMES           @"Ringing time:"
 #define kGSM_MC_DELAYED_ENTRY           @"Entry delay time(0-255sec):"
